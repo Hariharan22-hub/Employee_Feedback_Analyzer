@@ -75,7 +75,7 @@ public class AuthService {
     public LoginResponse registerHR(HRRegisterRequest request) {
         // Enforce HR registration authorization code check
         if (request.getHrCode() == null || !request.getHrCode().trim().equals(hrRegistrationCode.trim())) {
-            throw new BadRequestException("Invalid HR registration code. HR account creation rejected.");
+            throw new BadRequestException("Invalid HR verification code.");
         }
 
         if (userRepository.existsByUsername(request.getUsername())) {

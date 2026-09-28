@@ -51,38 +51,44 @@ JWT + BCrypt          RAG / Policies            Hibernate
 ## 3. Technology Stack
 
 ### Backend
-- **Language**: Java 21 LTS
-- **Framework**: Spring Boot 3.3.4
-- **Security**: Spring Security 6 with BCrypt password hashing & JJWT 0.12 (Stateless JWT authentication)
-- **Persistence**: Spring Data JPA & Hibernate 6 with `hibernate-community-dialects`
-- **Database**: SQLite 3 via `org.xerial:sqlite-jdbc`
-- **AI Integration**: Google Gemini API (`gemini-2.5-flash` / `gemini-1.5-flash`) via structured JSON prompt engineering + resilient offline heuristic fallback engine
-- **RAG Engine**: Pure Java TF-IDF Vectorizer with Cosine Similarity index over organizational policy corpus
-- **Build Tool**: Apache Maven 3.9+
+- Java 21
+- Spring Boot 3
+- Spring Security
+- Spring Data JPA
+- JWT
+- BCrypt
+- SQLite
+- Maven
 
 ### Frontend
-- **Framework**: React 18+ (Vite)
-- **Styling**: Vanilla CSS enterprise design system with responsive layouts, modern card elevation, accessible typography, and status badges
-- **Icons**: Lucide React
-- **API Client**: Native Fetch API client with Bearer token interceptor and global error propagation
+- React
+- Vite
+- Lucide React
+- CSS
+
+### AI Layer
+- Google Gemini API
+- Java-based fallback analyzer
+
+### RAG Engine
+- TF-IDF
+- Cosine similarity
+- Java knowledge-base retrieval
 
 ---
 
 ## 4. Key Features
-
-### Employee Portal
-- **Public Employee Registration & Login**: Validated registration with backend role enforcement (`role = EMPLOYEE`).
-- **Secure Feedback Submission**: Select department, draft feedback (minimum 10 characters), and toggle end-to-end anonymity.
-- **Strict Data Isolation**: Employees can only view their own feedback history. Other employees' feedback and HR metrics are blocked at the database and API level.
-- **Inspection**: View submission status, sentiment classification, urgency level, and summary.
-
-### HR Portal
-- **Protected HR Registration**: Requires a secret server-side `HR_REGISTRATION_CODE`. Arbitrary role escalation is prevented.
-- **Executive Dashboard**: Real-time KPI cards (Total Submissions, Positive %, Negative %, Urgent/Critical issues, Sentiment distribution).
-- **AI Organizational Health Insight**: Dynamically generated high-level summary of company morale and primary recurring themes.
-- **Feedback Management & Search**: Filter by department, sentiment, urgency, topic, or free-text query. Full inspection drawer displays original text, AI summary, AI recommendation, emotion, intent, and anonymity status.
-- **Organizational Analytics**: Comprehensive distribution charts for departments, sentiment ratios, urgency levels, and recurring concerns. Displays a clean empty state if no data exists.
-- **HR Knowledge Assistant (RAG)**: Ask natural language questions against internal HR policies (Leave, Attendance, Remote Work/WFH, Grievance Redressal, Code of Conduct) with direct source citations.
+- Employee registration/login
+- HR registration with secure verification code
+- JWT authentication
+- Role-based authorization
+- Employee feedback submission
+- Anonymous feedback
+- AI feedback analysis
+- HR analytics
+- HR Assistant
+- RAG-based policy retrieval
+- Password visibility toggle
 
 ---
 
@@ -191,10 +197,10 @@ Create a `.env` file or export the following variables:
 GEMINI_API_KEY=your_gemini_api_key_here
 
 # HR Registration Protection Code (Server-side secret)
-HR_REGISTRATION_CODE=HR_SECRET_ACCESS_2025
+HR_REGISTRATION_CODE=your_hr_registration_code_here
 
 # JWT Secret Key (HMAC SHA-256)
-JWT_SECRET=404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+JWT_SECRET=your_jwt_secret_here
 
 # Database Configuration
 DATABASE_URL=jdbc:sqlite:./feedback_agent.db

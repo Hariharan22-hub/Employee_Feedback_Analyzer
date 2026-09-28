@@ -88,7 +88,8 @@ class AuthAndSecurityTest {
                 "HR Candidate", "hrcand", "hrcand@example.com", "Password123", "People Ops", "INVALID_CODE_123"
         );
 
-        assertThrows(BadRequestException.class, () -> authService.registerHR(hrReq));
+        BadRequestException ex = assertThrows(BadRequestException.class, () -> authService.registerHR(hrReq));
+        assertEquals("Invalid HR verification code.", ex.getMessage());
         assertFalse(userRepository.existsByUsername("hrcand"));
     }
 

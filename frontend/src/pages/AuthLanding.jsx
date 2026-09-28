@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
-import { UserCheck, ShieldCheck, Lock, User, Mail, Building, KeyRound, ArrowRight, AlertCircle, Sparkles } from 'lucide-react';
+import { UserCheck, ShieldCheck, Lock, User, Mail, Building, KeyRound, ArrowRight, AlertCircle, Sparkles, Eye, EyeOff } from 'lucide-react';
 
 export default function AuthLanding() {
   const { login } = useAuth();
@@ -17,6 +17,10 @@ export default function AuthLanding() {
   const [department, setDepartment] = useState('Engineering');
   const [hrCode, setHrCode] = useState('');
 
+  // Password visibility toggles
+  const [showPassword, setShowPassword] = useState(false);
+  const [showHrCode, setShowHrCode] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -24,6 +28,8 @@ export default function AuthLanding() {
     setActivePortal(portal);
     setError('');
     setAuthMode('login');
+    setShowPassword(false);
+    setShowHrCode(false);
   };
 
   const handleSubmit = async (e) => {
@@ -188,7 +194,7 @@ export default function AuthLanding() {
               <div style={{ display: 'flex', background: '#f1f5f9', padding: 4, borderRadius: 8 }}>
                 <button
                   type="button"
-                  onClick={() => { setAuthMode('login'); setError(''); }}
+                  onClick={() => { setAuthMode('login'); setError(''); setShowPassword(false); setShowHrCode(false); }}
                   style={{
                     padding: '6px 14px',
                     borderRadius: 6,
@@ -205,7 +211,7 @@ export default function AuthLanding() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => { setAuthMode('register'); setError(''); }}
+                  onClick={() => { setAuthMode('register'); setError(''); setShowPassword(false); setShowHrCode(false); }}
                   style={{
                     padding: '6px 14px',
                     borderRadius: 6,
@@ -274,14 +280,25 @@ export default function AuthLanding() {
                 </div>
                 <div className="form-group">
                   <label className="form-label">Password</label>
-                  <input
-                    type="password"
-                    className="form-input"
-                    placeholder="••••••••"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
+                  <div className="password-input-wrapper">
+                    <input
+                      type={showPassword ? 'text' : 'password'}
+                      className="form-input"
+                      placeholder="••••••••"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="password-toggle-btn"
+                      onClick={() => setShowPassword(!showPassword)}
+                      aria-label={showPassword ? "Hide password" : "Show password"}
+                      tabIndex={0}
+                    >
+                      {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -308,17 +325,28 @@ export default function AuthLanding() {
                     <div className="form-group">
                       <label className="form-label" style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#6d28d9' }}>
                         <KeyRound size={15} />
-                        HR Registration Secret Code *
+                        HR Verification Code *
                       </label>
-                      <input
-                        type="password"
-                        className="form-input"
-                        placeholder="Enter organization HR access code"
-                        value={hrCode}
-                        onChange={(e) => setHrCode(e.target.value)}
-                        required
-                        style={{ borderColor: '#c4b5fd' }}
-                      />
+                      <div className="password-input-wrapper">
+                        <input
+                          type={showHrCode ? 'text' : 'password'}
+                          className="form-input"
+                          placeholder="Enter organization HR verification code"
+                          value={hrCode}
+                          onChange={(e) => setHrCode(e.target.value)}
+                          required
+                          style={{ borderColor: '#c4b5fd' }}
+                        />
+                        <button
+                          type="button"
+                          className="password-toggle-btn"
+                          onClick={() => setShowHrCode(!showHrCode)}
+                          aria-label={showHrCode ? "Hide HR verification code" : "Show HR verification code"}
+                          tabIndex={0}
+                        >
+                          {showHrCode ? <EyeOff size={18} /> : <Eye size={18} />}
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>

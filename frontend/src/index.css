@@ -535,6 +535,45 @@ body {
   background: #f8fafc;
 }
 
+/* Password Input Visibility Toggle */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-wrapper .form-input {
+  padding-right: 42px;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.password-toggle-btn:hover {
+  color: var(--text-main);
+  background-color: #f1f5f9;
+}
+
+.password-toggle-btn:focus {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 1px;
+}
+
 /* Simple responsive rules */
 @media (max-width: 768px) {
   .navbar-container {
@@ -551,3 +590,4 @@ body {
     grid-template-columns: 1fr;
   }
 }
+

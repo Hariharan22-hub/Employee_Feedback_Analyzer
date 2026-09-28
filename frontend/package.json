@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "employee-feedback-analyzer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
