@@ -1,0 +1,23 @@
+# Remote Work and Hybrid Work-From-Home (WFH) Policy
+
+1. Hybrid Model Structure
+- The organization operates on an agile hybrid model: employees may work remotely up to 3 days per week, with a minimum of 2 days on-site collaboration at the company office.
+- Core on-site team days are set by individual department heads (commonly Tuesdays and Thursdays for all-hands and planning sessions).
+
+2. Fully Remote Eligibility
+- Full remote status is assessed on a role-by-role basis for specialized roles or geographically dispersed staff. Requires approval by the Department VP and Chief People Officer.
+- Employees must maintain consistent high performance and reliable metrics to remain eligible for remote privileges.
+
+3. Home Office Equipment and Security Stipend
+- All eligible remote employees receive standard IT corporate hardware: encrypted laptop, external monitor, and enterprise peripherals.
+- A one-time home office ergonomic setup stipend of $500 is provided to new full-time hires.
+- A monthly internet connectivity allowance of $50 is reimbursed through standard expense claims.
+
+4. Cybersecurity & Data Protection Requirements
+- All remote work must be conducted exclusively via the secure corporate VPN.
+- Company devices must never be shared with family members or unauthorized third parties.
+- Public Wi-Fi networks must only be utilized with active corporate VPN encryption and Multi-Factor Authentication (MFA).
+
+5. Availability and Communication
+- Remote employees must maintain active status indicators on enterprise collaboration tools (Slack/Teams) during agreed core business hours.
+- Video presence is encouraged during key team ceremonies and quarterly milestone reviews.

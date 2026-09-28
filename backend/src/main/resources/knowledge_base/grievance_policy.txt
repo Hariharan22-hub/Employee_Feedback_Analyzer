@@ -1,0 +1,24 @@
+# Employee Grievance Redressal and Resolution Policy
+
+1. Policy Objective
+This policy establishes an impartial, transparent, confidential, and timely mechanism for employees to raise grievances concerning unfair treatment, workplace conditions, harassment, or conflicts.
+
+2. Step 1 - Informal Resolution
+- Employees are encouraged to resolve minor misunderstandings or interpersonal friction informally with their peer or direct supervisor within 10 business days of the incident.
+- HR People Partners are available for informal neutral mediation coaching without formal documentation if preferred.
+
+3. Step 2 - Formal Grievance Submission
+- If the matter remains unresolved or involves direct managerial conflict, the employee may submit a written grievance through the secure Employee Feedback Portal or directly to grievance@company.internal.
+- The complaint must detail dates, involved parties, factual evidence, and desired resolution.
+
+4. Step 3 - Impartial Investigation
+- The HR Ethics Committee assigns an independent investigator within 3 business days of receiving the grievance.
+- All involved parties are interviewed with strict confidentiality protections.
+- The investigator prepares an objective findings report within 14 business days.
+
+5. Step 4 - Determination and Action
+- The Grievance Committee delivers written recommendations and remedial actions to the concerned parties within 5 business days of investigation conclusion.
+- Corrective actions may range from structural reallocation, mandatory training, formal reprimand, to employment termination.
+
+6. Anti-Retaliation Guarantee
+- Retaliation against any employee who reports a grievance in good faith or participates in an investigation is strictly prohibited under zero-tolerance rules, punishable by immediate termination.
